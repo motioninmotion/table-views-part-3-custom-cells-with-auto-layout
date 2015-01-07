@@ -12,7 +12,12 @@ class TodoListViewController < UITableViewController
 
   def tableView(tableView, cellForRowAtIndexPath: indexPath)
     cell = tableView.dequeueReusableCellWithIdentifier(TodoCell::ID, forIndexPath: indexPath)
-    cell.textLabel.text = Todo.all[indexPath.row].text
+    cell.text_label.text = Todo.all[indexPath.row].text
+    cell.notes_label.text = Todo.all[indexPath.row].notes
     cell
+  end
+
+  def viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    tableView.estimatedRowHeight = 80
   end
 end
