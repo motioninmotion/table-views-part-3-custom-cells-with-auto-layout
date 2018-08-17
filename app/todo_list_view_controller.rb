@@ -6,7 +6,7 @@ class TodoListViewController < UITableViewController
     tableView.registerClass(TodoCell, forCellReuseIdentifier: TodoCell::ID)
   end
 
-  def tableView(tableView, numberOfRowsInSection: section)
+  def tableView(_, numberOfRowsInSection: _)
     Todo.count
   end
 
@@ -17,7 +17,7 @@ class TodoListViewController < UITableViewController
     cell
   end
 
-  def viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+  def viewWillTransitionToSize(_, withTransitionCoordinator: _)
     tableView.estimatedRowHeight = 80
   end
 end
