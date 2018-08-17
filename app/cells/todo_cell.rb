@@ -3,7 +3,7 @@ class TodoCell < UITableViewCell
 
   attr_reader :text_label, :notes_label
 
-  def initWithStyle(_, reuseIdentifier: reuseIdentifier)
+  def initWithStyle(style, reuseIdentifier: reuseIdentifier)
     super
 
     @text_label = UILabel.new
